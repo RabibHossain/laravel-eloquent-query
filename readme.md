@@ -55,3 +55,9 @@
             ->get();
   ```
   
+- [x] Find in JSON vis LIKE Search <a href="https://github.com/RabibHossain/laravel-eloquent-query/blob/main/singleuser.json">singleuser.json</a>
+  ```sh
+  MyTableName::where('column_name->data->email', 'like', '%weaver@reqres%')
+            ->get();
+  ```
+  
