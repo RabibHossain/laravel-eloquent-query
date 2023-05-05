@@ -34,6 +34,8 @@
     }
   ```
   
+## JSON Where Clauses  
+  
 - [x] Find in Nested JSON Array with multiple Key <a href="https://github.com/RabibHossain/laravel-eloquent-query/blob/main/userlist.json">userlist.json</a>
   ```sh
   DB::table('my_table_name')
