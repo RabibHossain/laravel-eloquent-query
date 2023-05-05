@@ -36,8 +36,15 @@
   
   - [x] Find in Nested JSON Array with multiple Key <a href="https://github.com/RabibHossain/laravel-eloquent-query/blob/main/userlist.json">userlist.json</a>
   ```sh
-  $data = DB::table('my_table_name')
+  DB::table('my_table_name')
             ->whereJsonContains('column_name->data', ['first_name' => 'Michael', 'last_name' => Lawson])
+            ->get();
+  ```
+  
+  - [x] Find in Nested JSON Array with single Key <a href="https://github.com/RabibHossain/laravel-eloquent-query/blob/main/userlist.json">userlist.json</a>
+  ```sh
+  DB::table('my_table_name')
+            ->whereJsonContains('column_name->data', ['email' => 'michael.lawson@reqres.in'])
             ->get();
   ```
   
