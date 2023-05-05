@@ -48,3 +48,10 @@
             ->get();
   ```
   
+- [x] Find in JSON Key <a href="https://github.com/RabibHossain/laravel-eloquent-query/blob/main/singleuser.json">singleuser.json</a>
+  ```sh
+  DB::table('my_table_name')
+            ->whereJsonContains('column_name->data->email',  'janet.weaver@reqres.in')
+            ->get();
+  ```
+  
