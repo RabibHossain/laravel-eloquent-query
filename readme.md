@@ -2,9 +2,17 @@
 
 - [x] Create data using eloquent request
   ```sh
-  public function update(ModelRequest $request)
+  public function insert(ModelRequest $request)
   {
     Model::create($request->all());
+  }
+  ```
+  
+- [x] Update Data using eloquent request
+  ```sh
+  public function update(ModelRequest $request, Model $modelInstance)
+  {
+    $modelInstance->fill($request->all())->save();
   }
   ```
 
