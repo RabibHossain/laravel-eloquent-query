@@ -1,3 +1,13 @@
+## Create | Update Data Using Eloquent Request
+
+- [x] Create data using eloquent request
+  ```sh
+  public function update(ModelRequest $request)
+  {
+    Model::create($request->all());
+  }
+  ```
+
 ## Update Existing Column
 
 - [x] Setting email to unique
