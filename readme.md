@@ -68,6 +68,15 @@
   $instance = ModelName::firstWhere('active', 1);
   ```  
   
+- [x] Throw an exception if a instance of model is not found
+  ```sh
+  $instance = ModelName::findOrFail(1);
+  ```  
+  Or,
+  ```sh
+  $instance = ModelName::where('age', '>', 30)->firstOrFail();
+  ```  
+  
 ## JSON Where Clauses  
   
 - [x] Find in Nested JSON Array with multiple Key <a href="https://github.com/RabibHossain/laravel-eloquent-query/blob/main/userlist.json">userlist.json</a>
