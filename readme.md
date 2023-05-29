@@ -77,6 +77,33 @@
   $instance = ModelName::where('age', '>', 30)->firstOrFail();
   ```  
   
+## Full Text SEARCH over columns
+
+- [x] Put below statements inside **public function up()** of migration
+  ```sh
+  # Laravel doesn't support full text search migration
+  
+  // Single Column
+  DB::statement('ALTER TABLE TABLE_NAME ADD FULLTEXT search_index(columnName)'); 
+  // Multiple Column
+  DB::statement('ALTER TABLE TABLE_NAME ADD FULLTEXT search_index(column1, column2)'); 
+  ```
+- [x] Put below statements in **public function down()** of migration
+  ```sh
+  Schema::table('model_name', function($table) {
+	    $table->dropIndex('search_index');
+	});
+  ```
+- [x] Now write the eloquent statement in **controller** / **service class** / **actions class**.
+  ```sh
+  // Single Column
+  ModelName::whereRaw('MATCH (columnName) AGAINST (?)' , array($request->search_text))->get();
+  // Multiple Column
+  ModelName::whereRaw('MATCH (column1, column2) AGAINST (?)' , array($request->search_text))->get();
+	});
+  ```  
+  
+  
 ## JSON Where Clauses  
   
 - [x] Find in Nested JSON Array with multiple Key <a href="https://github.com/RabibHossain/laravel-eloquent-query/blob/main/userlist.json">userlist.json</a>
