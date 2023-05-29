@@ -100,7 +100,6 @@
   ModelName::whereRaw('MATCH (columnName) AGAINST (?)' , array($request->search_text))->get();
   // Multiple Column
   ModelName::whereRaw('MATCH (column1, column2) AGAINST (?)' , array($request->search_text))->get();
-	});
   ```  
   
   
