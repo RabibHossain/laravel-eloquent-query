@@ -60,7 +60,23 @@
             $table->time('phone')->nullable()->change();
         });
     }
+  ```
+  
+- [x] Adding new Column to a table after a specific column
+  ```sh
+  public function up()
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('count')->default(0)->after('column_name');
+        });
+    }
     
+  public function down()
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('count');
+        });
+    }
   ```  
   
 ## Retrieve Single Model Instance
