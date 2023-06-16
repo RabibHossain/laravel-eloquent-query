@@ -52,6 +52,17 @@
     }
   ```
   
+- [x] Modify the column to make it nullable
+  ```sh
+  public function up()
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->time('phone')->nullable()->change();
+        });
+    }
+    
+  ```  
+  
 ## Retrieve Single Model Instance
 
 - [x] Retrieve a model by its primary key or id
