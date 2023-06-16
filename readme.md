@@ -103,7 +103,14 @@
   ```sh
   $instance = ModelName::where('age', '>', 30)->firstOrFail();
   ```  
-  
+## Date columns
+- [x] Get Data Between Two Dates
+  ```sh
+  User::whereBetween('created_at', [$startDate, $endDate])->get();
+  Or
+  User::whereDate('created_at', '>=', $startDate)->whereDate('created_at', '<=', $endDate)->get();
+  ```
+
 ## Full Text SEARCH over columns
 
 - [x] Put below statements inside **public function up()** of migration
