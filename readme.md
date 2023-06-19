@@ -102,13 +102,23 @@
   Or,
   ```sh
   $instance = ModelName::where('age', '>', 30)->firstOrFail();
-  ```  
+  ``` 
+  
 ## Date columns
 - [x] Get Data Between Two Dates
   ```sh
   User::whereBetween('created_at', [$startDate, $endDate])->get();
   Or
   User::whereDate('created_at', '>=', $startDate)->whereDate('created_at', '<=', $endDate)->get();
+  ```
+ 
+## Conditional Query | When Clause
+- [x] Filtering in where caluse if else condition
+  ```sh
+  Comment::select("*")
+  	->when($request->has('comment_id'), function ($query) use ($request) {
+       		$query->where('comment_id', $request->comment_id);
+        })->get();
   ```
 
 ## Full Text SEARCH over columns
