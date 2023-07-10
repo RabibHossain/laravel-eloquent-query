@@ -104,6 +104,12 @@
   $instance = ModelName::where('age', '>', 30)->firstOrFail();
   ``` 
   
+## WhereNotIn Clause Query
+- [x] Get Data Where Countries Not In North America, South America, Antarctica, Europe continents.
+  ```sh
+  Country::whereNotIn('continent', [ 'North America', 'South America', 'Antarctica', 'Europe' ])->get();
+  ```
+  
 ## Date columns
 - [x] Get Data Between Two Dates
   ```sh
