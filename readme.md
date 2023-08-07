@@ -109,7 +109,13 @@
   ```sh
   Country::whereNotIn('continent', [ 'North America', 'South America', 'Antarctica', 'Europe' ])->get();
   ```
-  
+
+## Fetch a single column value from the table
+- [x] The value() method in Eloquent to fetch a single column from the DB
+  ```sh
+  Model::where('id', 1)->value('name');
+  ```
+    
 ## Date columns
 - [x] Get Data Between Two Dates
   ```sh
