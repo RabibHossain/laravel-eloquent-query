@@ -127,7 +127,8 @@
 ## Sum with Where & Group By
 - [x] Find the total sum of paid amount of an user based on payment methods
   ```sh
-  Model::select("user_id", db::raw("SUM(paid_amount) AS amount"))->where('user_id', $user_id)->groupBy('payment_method')->get();
+  Model::select("user_id", db::raw("SUM(paid_amount) AS amount"))->where('user_id', $user_id)
+  	->groupBy('payment_method')->get();
   ```  
  
 ## Conditional Query | When Clause
