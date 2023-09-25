@@ -123,6 +123,12 @@
   Or
   User::whereDate('created_at', '>=', $startDate)->whereDate('created_at', '<=', $endDate)->get();
   ```
+
+## Sum with Where & Group By
+- [x] Find the total sum of paid amount of an user based on payment methods
+  ```sh
+  Model::select("user_id", db::raw("SUM(paid_amount) AS amount"))->where('user_id', $user_id)->groupBy('payment_method')->get();
+  ```  
  
 ## Conditional Query | When Clause
 - [x] Filtering in where caluse if else condition
