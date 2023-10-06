@@ -77,7 +77,73 @@
             $table->dropColumn('count');
         });
     }
-  ```  
+  ```
+
+## Drop Column(s) from table using migration
+
+- [x] Drop a column
+  ```sh
+  public function up()
+    {
+        Schema::table('table_name', function (Blueprint $table) {
+            $table->dropColumn('column_name');
+        });
+    }
+    
+  public function down()
+    {
+    }
+  ```
+
+- [x] Drop multiple columns
+  ```sh
+  public function up()
+    {
+        Schema::table('table_name', function (Blueprint $table) {
+            $table->dropColumn(['column_name1', 'column_name2', 'column_name3']);
+        });
+    }
+    
+  public function down()
+    {
+    }
+  ```
+  
+- [x] Drop column if exists
+  ```sh
+  public function up()
+    {
+        if (Schema::hasColumn('table_name', 'column_name')){
+            Schema::table('table_name', function (Blueprint $table) {
+                $table->dropColumn('column_name');
+            });
+        }
+    }
+    
+  public function down()
+    {
+    }
+  ```
+
+- [x] Drop multiple columns if exists using foreach
+  ```sh
+  public function up()
+    {
+        $table_name = 'table_name';
+        $columns = ['column_name1', 'column_name2', 'column_name3'];
+        foreach ($columns as $col) {
+            if (Schema::hasColumn($table_name, $col)) {
+                Schema::table($table_name, function (Blueprint $table) use ($col) {
+                    $table->dropColumn($col);
+                });
+            }
+        }
+    }
+    
+  public function down()
+    {
+    }
+  ```
   
 ## Retrieve Single Model Instance
 
