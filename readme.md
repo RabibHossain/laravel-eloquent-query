@@ -78,7 +78,7 @@
         });
     }
   ```
-
+<a name="drop-column"></a>
 ## Drop Column(s) from table using migration
 
 - [x] Drop a column
@@ -145,14 +145,14 @@
     }
   ```
 
-## Drop Foreign key Constraints from table using migration
+## Drop Foreign key Constraints from table using migration 
 
-- [x] Drop a column
+- [x] Drop the foreign key constraints, but it will keep the column in the table. To remove the column too, please check (<a href="#drop-column">this section</a>)
   ```sh
   public function up()
     {
         Schema::table('table_name', function (Blueprint $table) {
-            $table->dropForeign(['foreign_kei_id']);
+            $table->dropForeign(['foreign_key_id']);
         });
     }
     
