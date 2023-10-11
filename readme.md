@@ -147,7 +147,8 @@
 
 ## Drop Foreign key Constraints from table using migration 
 
-- [x] Drop the foreign key constraints, but it will keep the column in the table. To remove the column too, please check (<a href="#drop-column">this section</a>)
+- [x] Drop the foreign key constraints, but it will keep the column in the table. To remove the column too, please check <a href="#drop-column">this section</a>
+
   ```sh
   public function up()
     {
