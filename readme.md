@@ -144,6 +144,23 @@
     {
     }
   ```
+
+## Drop Foreign key Constraints from table using migration
+
+- [x] Drop a column
+  ```sh
+  public function up()
+    {
+        Schema::table('table_name', function (Blueprint $table) {
+            $table->dropForeign(['foreign_kei_id']);
+        });
+    }
+    
+  public function down()
+    {
+    }
+  ```
+
   
 ## Retrieve Single Model Instance
 
